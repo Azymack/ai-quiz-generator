@@ -64,7 +64,7 @@ export default function Home({ questions, title }: HomeProps) {
           ))} */}
 
           <CustomTabs
-            tabs={["Flashcards", "Test", "Learn", "Match"]}
+            tabs={["Flashcards", "Learn", "Match"]}
             onClickAction={setPlayMode}
           />
         </div>
