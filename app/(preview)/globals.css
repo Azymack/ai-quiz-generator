@@ -72,7 +72,7 @@
 }
 
 .rumble {
-  animation: rumble 0.5s;
+  animation: rumble 0.3s;
 }
 
 @keyframes fadeOut {
@@ -88,14 +88,32 @@
   0% {
     transform: rotate(0deg);
   }
-  25% {
-    transform: rotate(-5deg);
+  10% {
+    transform: rotate(-1deg);
+  }
+  20% {
+    transform: rotate(0.5deg);
+  }
+  30% {
+    transform: rotate(-0.5deg);
+  }
+  40% {
+    transform: rotate(0.25deg);
   }
   50% {
     transform: rotate(0deg);
   }
-  75% {
-    transform: rotate(5deg);
+  60% {
+    transform: rotate(0.25deg);
+  }
+  70% {
+    transform: rotate(-0.5deg);
+  }
+  80% {
+    transform: rotate(0.5deg);
+  }
+  90% {
+    transform: rotate(-1deg);
   }
   100% {
     transform: rotate(0deg);
