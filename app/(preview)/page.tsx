@@ -22,11 +22,12 @@ import NextLink from "next/link";
 import { generateQuizTitle } from "./actions";
 import { AnimatePresence, motion } from "framer-motion";
 import { VercelIcon, GitIcon } from "@/components/icons";
+import Home from "@/components/home";
 
 export default function ChatWithFiles() {
   const [files, setFiles] = useState<File[]>([]);
   const [questions, setQuestions] = useState<z.infer<typeof questionsSchema>>(
-    [],
+    []
   );
   const [isDragging, setIsDragging] = useState(false);
   const [title, setTitle] = useState<string>();
@@ -53,14 +54,14 @@ export default function ChatWithFiles() {
 
     if (isSafari && isDragging) {
       toast.error(
-        "Safari does not support drag & drop. Please use the file picker.",
+        "Safari does not support drag & drop. Please use the file picker."
       );
       return;
     }
 
     const selectedFiles = Array.from(e.target.files || []);
     const validFiles = selectedFiles.filter(
-      (file) => file.type === "application/pdf" && file.size <= 5 * 1024 * 1024,
+      (file) => file.type === "application/pdf" && file.size <= 5 * 1024 * 1024
     );
     console.log(validFiles);
 
@@ -87,7 +88,7 @@ export default function ChatWithFiles() {
         name: file.name,
         type: file.type,
         data: await encodeFileAsBase64(file),
-      })),
+      }))
     );
     submit({ files: encodedFiles });
     const generatedTitle = await generateQuizTitle(encodedFiles[0].name);
@@ -103,7 +104,8 @@ export default function ChatWithFiles() {
 
   if (questions.length === 4) {
     return (
-      <Quiz title={title ?? "Quiz"} questions={questions} clearPDF={clearPDF} />
+      // <Quiz title={title ?? "Quiz"} questions={questions} clearPDF={clearPDF} />
+      <Home title={title ?? "Quiz"} questions={questions} />
     );
   }
 
