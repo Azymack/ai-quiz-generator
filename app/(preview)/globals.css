@@ -72,7 +72,7 @@
 }
 
 .rumble {
-  animation: rumble 0.3s;
+  animation: rumble 0.5s;
 }
 
 @keyframes fadeOut {

@@ -34,7 +34,7 @@ const TabTrigger = ({
     {isActive && (
       <motion.div
         layoutId="underline"
-        className="absolute left-0 bottom-0 h-[2px] w-full bg-black underline"
+        className="absolute left-0 bottom-0 h-[2px] w-full bg-gray-500 underline"
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       />
     )}
